@@ -7,7 +7,7 @@
 .playing .stick {
   transform: rotateZ(140deg);
   left: 72px;
-  transition: left 200ms ease-out;
+  transition: left 400ms cubic-bezier(0.35, 0.13, 0.45, 1.56);
 }
 
 .ball {
@@ -19,8 +19,9 @@
   width: 100px;
   height: 100px;
 
-  transition: transform 2s 200ms ease-out;
+  transition: transform 1s 300ms cubic-bezier(0.35, 0.13, 0.5, 1.29);
 }
+
 .playing .ball {
   transform: translateX(796px) translateY(-18px);
 }
