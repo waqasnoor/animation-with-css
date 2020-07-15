@@ -1,13 +1,31 @@
-* {
-  box-sizing: border-box;
-  padding: 0px;
-  margin: 0px;
+.stick {
+  position: absolute;
+  transform: rotateZ(140deg);
+  top: 49px;
+  left: 20px;
+}
+.playing .stick {
+  transform: rotateZ(140deg);
+  left: 72px;
+  transition: left 200ms ease-out;
 }
 
-.red {
-  color: red;
+.ball {
+  background: #0097c0;
+  border-radius: 50%;
+  position: absolute;
+  top: 190px;
+  left: 620px;
+  width: 100px;
+  height: 100px;
+
+  transition: transform 600ms 200ms ease-out;
+}
+.playing .ball {
+  transform: translateX(796px) translateY(-18px);
+}
+body {
+  background: #e3edf2;
 }
 
-.green {
-  color: green;
-}
+/* CP_DoFullRefresh */

@@ -1,4 +1,4 @@
 window.addEventListener("load", (event) => {
-  const Element = document.getElementById("root");
-  Element.classList.value = "red";
+  const body = document.getElementsByTagName("body")[0];
+  body.classList.add("playing");
 });
