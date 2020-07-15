@@ -1,0 +1,13 @@
+* {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+}
+
+.red {
+  color: red;
+}
+
+.green {
+  color: green;
+}

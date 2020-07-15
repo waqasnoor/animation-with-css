@@ -1,0 +1,22 @@
+{
+  "name": "animation-with-css",
+  "version": "1.0.0",
+  "description": "polishing my css and animation skills",
+  "scripts": {
+    "start": "parcel index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://waqasnoor@github.com/waqasnoor/animation-with-css.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/waqasnoor/animation-with-css/issues"
+  },
+  "homepage": "https://github.com/waqasnoor/animation-with-css#readme",
+  "dependencies": {
+    "parcel": "^1.12.4"
+  }
+}
