@@ -19,7 +19,7 @@
   width: 100px;
   height: 100px;
 
-  transition: transform 600ms 200ms ease-out;
+  transition: transform 2s 200ms ease-out;
 }
 .playing .ball {
   transform: translateX(796px) translateY(-18px);
