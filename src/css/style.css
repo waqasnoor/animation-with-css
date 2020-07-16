@@ -29,4 +29,18 @@ body {
   background: #e3edf2;
 }
 
+@keyframes cat-walking {
+  to {
+    background-position-y: -2400px;
+  }
+}
+
+.cat {
+  background: url("/src/images/sprite_catwalk.png");
+  background-position-x: 0px;
+  background-position-y: 0px;
+  width: 400px;
+  height: 200px;
+  animation: cat-walking 900ms steps(12);
+}
 /* CP_DoFullRefresh */
