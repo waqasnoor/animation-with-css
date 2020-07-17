@@ -41,6 +41,6 @@ body {
   background-position-y: 0px;
   width: 400px;
   height: 200px;
-  animation: cat-walking 900ms steps(12);
+  animation: cat-walking 1000ms steps(12) infinite;
 }
 /* CP_DoFullRefresh */
