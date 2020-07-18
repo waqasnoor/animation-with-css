@@ -1,6 +1,6 @@
 body {
   background: #c0c0c0;
-  font-family: Crafty Girls, cursive;
+  font-family: Satisfy, cursive;
   font-size: 14px;
   text-align: center;
 }
@@ -28,8 +28,9 @@ div {
   top: 100px;
   left: 20%;
   opacity: 0;
-  transition: opacity 300ms linear;
-  animation: strand-open 2000ms linear;
+  display: none;
+  transition: opacity 300ms ease-in-out;
+  animation: strand-open 2000ms 300ms ease-in-out;
   animation-play-state: paused;
 
   animation-fill-mode: both;
@@ -41,27 +42,51 @@ div {
   width: 50px;
   top: 85px;
   opacity: 0;
-  transition: opacity 300ms linear;
-  animation: ballAnimate 2000ms linear;
+  display: none;
+  transition: opacity 300ms ease-in-out;
+  animation: ballAnimate 2000ms 300ms ease-in-out;
   animation-play-state: paused;
 
   animation-fill-mode: both;
 }
 
-.playing .strand {
+.scene1 .strand {
   opacity: 1;
   animation-play-state: running;
+  display: block;
 }
 
-.playing .ball {
+.scene1 .ball {
   opacity: 1;
   animation-play-state: running;
+  display: block;
 }
 
-.hidden .strand {
-  opacity: 0;
+@keyframes loading-animation {
+  to {
+    width: 130px;
+  }
 }
-
-.hidden .ball {
+.loading {
+  position: absolute;
+  overflow-x: hidden;
+  width: 140px;
+  left: 35%;
+  top: 74px;
   opacity: 0;
+  padding-left: 5px;
+  width: 194px;
+  letter-spacing: 5px;
+  /* display: none; */
+  transition: opacity 1000ms ease-in-out;
+
+  /* width: 130px; */
+  /* animation: loading-animation 1000ms 300ms ease-in-out; */
+  /* animation-fill-mode: both; */
+  /* animation-play-state: paused; */
+}
+.scene2 .loading {
+  /* animation-play-state: running; */
+  opacity: 1;
+  display: block;
 }
