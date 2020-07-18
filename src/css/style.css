@@ -43,4 +43,37 @@ body {
   height: 200px;
   animation: cat-walking 1000ms steps(12) infinite;
 }
+.tuna-window {
+  background: url(/src/images/tuna-window.png) no-repeat 0 0;
+  background-size: 40% auto;
+  padding-top: 35%;
+}
+@keyframes tail-wiggling {
+  from {
+    background-position-y: -480px;
+  }
+  to {
+    background-position-y: 0px;
+  }
+}
+
+.tuna-tail {
+  background: url(/src/images/tail.png) no-repeat;
+  background-size: 100% auto;
+  position: absolute;
+  height: 75px;
+  width: 210px;
+  top: 396px;
+  /* background-position-y: 0px; */
+  /* animation-fill-mode: backwards; */
+  left: 117px;
+  animation: tail-wiggling 500ms steps(5, start) infinite;
+  animation-play-state: paused;
+  /* animation-fill-mode: forwards; */
+  animation-direction: alternate;
+}
+.tuna-tail:hover {
+  animation-play-state: running;
+}
+
 /* CP_DoFullRefresh */
