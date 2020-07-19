@@ -5,7 +5,7 @@ body {
   text-align: center;
 }
 div {
-  font-size: 3em;
+  font-size: 3rem;
 }
 @keyframes strand-open {
   to {
@@ -19,6 +19,12 @@ div {
   }
 }
 
+.loader {
+  opacity: 0;
+}
+.loader.playing {
+  opacity: 1;
+}
 .strand {
   background: url("/src/images/strand.svg") no-repeat 0 0;
   height: 30px;
@@ -38,7 +44,7 @@ div {
 
 .ball {
   position: absolute;
-  left: 306px;
+  left: 300px;
   width: 50px;
   top: 85px;
   opacity: 0;
@@ -50,13 +56,13 @@ div {
   animation-fill-mode: both;
 }
 
-.scene1 .strand {
+.loader.scene1 .strand {
   opacity: 1;
   animation-play-state: running;
   display: block;
 }
 
-.scene1 .ball {
+.loader.scene1 .ball {
   opacity: 1;
   animation-play-state: running;
   display: block;
@@ -85,8 +91,19 @@ div {
   /* animation-fill-mode: both; */
   /* animation-play-state: paused; */
 }
-.scene2 .loading {
+.loader.scene2 .loading {
   /* animation-play-state: running; */
   opacity: 1;
   display: block;
+}
+
+.isloading .data {
+  opacity: 0;
+}
+.showdata .data {
+  opacity: 1;
+}
+
+.data {
+  transition: opacity 1000ms linear;
 }
