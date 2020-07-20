@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/waqasnoor/animation-with-css#readme",
   "dependencies": {
-    "parcel": "^1.12.4"
+    "parcel": "^1.12.4",
+    "waypoints": "^4.0.1"
   }
 }

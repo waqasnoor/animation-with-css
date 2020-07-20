@@ -1,46 +1,45 @@
-let scene;
-let loader;
-let transitionEnd = "hidden";
-let isLoading = true;
-window.addEventListener("load", (event) => {
-  loader = document.getElementsByClassName("loader")[0];
-  const ball = document.getElementsByClassName("ball")[0];
-  ball.addEventListener("animationend", () => {
-    toggleScene();
+$(window).load(function () {
+  //Start up the skrollr object
+  skrollr.init({
+    //keeps the bottom from being long
+    forceHeight: false,
   });
-  const loading = document.getElementsByClassName("loading")[0];
-  loading.addEventListener("transitionend", () => {
-    // console.log("transitionend");
-    if (transitionEnd === "hidden") {
-      transitionEnd = "display";
-      toggleScene();
-    } else {
-      transitionEnd = "hidden";
-    }
-  });
-  toggleScene();
-});
 
-function toggleScene() {
-  // return;
-  // return (container.className = "scene1");
-  if (!isLoading) {
-    loader.className = "loader hidden";
-    return showData();
-  }
-  if (scene === "scene1") {
-    scene = "scene2";
-  } else {
-    scene = "scene1";
-  }
-  loader.className = `loader playing ${scene}`;
-}
-setTimeout(() => {
-  isLoading = false;
-}, 6000);
-function showData() {
-  const container = document.getElementsByClassName("container")[0];
-  console.log("show data");
-  console.log({ container });
-  container.className = "container showdata";
-}
+  // The rest of this controls switching Alice's moods using jQuery Waypoints
+
+  // How to guess which frame is "being read".
+  var beingRead = function () {
+    // It would be approximately centered, of equal distance from top as from bottom.
+    var $screenHeight = $.waypoints("viewportHeight");
+    var $pageHeight = $(".page").height();
+    var offset = (($pageHeight - $screenHeight) / 2) * -1;
+
+    return offset;
+  };
+
+  $(".page").waypoint(
+    function (direction) {
+      var mood = $(this).data("mood");
+      $("body").removeClass().addClass(mood);
+      if (direction === "up") {
+        // if scrolling up
+        $(this)
+          .addClass("in-view")
+          .removeClass("scrolled-past")
+          .waypoint("next")
+          .removeClass("in-view");
+      } else {
+        // else, assuming we're not scrolling at all or are scrolling down
+        $(this)
+          .addClass("in-view")
+          .removeClass("scrolled-past")
+          .waypoint("prev")
+          .removeClass("in-view")
+          .addClass("scrolled-past");
+      }
+    },
+    {
+      offset: beingRead(),
+    }
+  );
+});

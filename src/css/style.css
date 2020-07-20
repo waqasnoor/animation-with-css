@@ -1,109 +1,106 @@
+.tuna-falling {
+  position: fixed;
+  bottom: 0;
+  right: 50%;
+  transform: translateX(300px);
+  width: 170px;
+  z-index: 1;
+}
+.tuna-falling img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 100%;
+}
+
+.tuna-falling .black-tuna {
+  position: relative;
+}
+
+.tuna-falling .tuna-glow {
+  opacity: 0;
+}
+
+#tunnel {
+  position: relative;
+  top: 0;
+  left: 0;
+  background: url(http://stash.rachelnabors.com/codepen/alice/bg-tunnel-border-left.svg?1)
+      0 0 repeat-y,
+    url(http://stash.rachelnabors.com/codepen/alice/bg-tunnel-border-right.svg?1)
+      100% 0 repeat-y,
+    url(http://stash.rachelnabors.com/codepen/alice/bg-tunnel-furniture-comp900.svg)
+      top center repeat-y,
+    url(http://stash.rachelnabors.com/codepen/alice/bg-tunnel-specks.png),
+    #6c373f;
+  background-size: 20px 150px, 20px 150px, 80% auto, auto auto;
+}
+
+.wrapper {
+  width: 800px;
+  margin: 0 auto;
+}
 body {
-  background: #c0c0c0;
-  font-family: Satisfy, cursive;
-  font-size: 14px;
-  text-align: center;
+  background: #000;
 }
-div {
-  font-size: 3rem;
+
+.page {
+  /* Each page has a 3/4 ratio */
+  padding-top: 75%;
+  /* Hide the text */
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
 }
-@keyframes strand-open {
-  to {
-    width: 600px;
+
+.alice-falling {
+  background-image: url("http://stash.rachelnabors.com/codepen/alice/alice-fall-saebaba4ad9.png");
+  background-size: 100% auto;
+  width: 350px;
+  padding-top: 545px;
+  top: -10%;
+  left: 50%;
+  position: fixed;
+  transform: translate(-50%);
+  z-index: 20;
+}
+
+.curious .alice-falling {
+  background-position: 0 20%;
+}
+
+.bored .alice-falling {
+  background-position: 0 80%;
+}
+
+.sleeping .alice-falling {
+  background-position: 0 60%;
+}
+
+.waking .alice-falling {
+  background-position: 0 100%;
+}
+
+.weird .alice-falling {
+  background-position: 0 0;
+}
+
+.jolted .alice-falling {
+  background-position: 0 40%;
+}
+
+@keyframes freak-out {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 200%;
   }
 }
-@keyframes ballAnimate {
-  to {
-    transform: rotateZ(360deg);
-    left: 900px;
-  }
-}
 
-.loader {
-  opacity: 0;
-}
-.loader.playing {
-  opacity: 1;
-}
-.strand {
-  background: url("/src/images/strand.svg") no-repeat 0 0;
-  height: 30px;
-  background-size: cover;
-  width: 10px;
-  position: absolute;
-  top: 100px;
-  left: 20%;
-  opacity: 0;
-  display: none;
-  transition: opacity 300ms ease-in-out;
-  animation: strand-open 2000ms 300ms ease-in-out;
-  animation-play-state: paused;
-
-  animation-fill-mode: both;
-}
-
-.ball {
-  position: absolute;
-  left: 300px;
-  width: 50px;
-  top: 85px;
-  opacity: 0;
-  display: none;
-  transition: opacity 300ms ease-in-out;
-  animation: ballAnimate 2000ms 300ms ease-in-out;
-  animation-play-state: paused;
-
-  animation-fill-mode: both;
-}
-
-.loader.scene1 .strand {
-  opacity: 1;
-  animation-play-state: running;
-  display: block;
-}
-
-.loader.scene1 .ball {
-  opacity: 1;
-  animation-play-state: running;
-  display: block;
-}
-
-@keyframes loading-animation {
-  to {
-    width: 130px;
-  }
-}
-.loading {
-  position: absolute;
-  overflow-x: hidden;
-  width: 140px;
-  left: 35%;
-  top: 74px;
-  opacity: 0;
-  padding-left: 5px;
-  width: 194px;
-  letter-spacing: 5px;
-  /* display: none; */
-  transition: opacity 1000ms ease-in-out;
-
-  /* width: 130px; */
-  /* animation: loading-animation 1000ms 300ms ease-in-out; */
-  /* animation-fill-mode: both; */
-  /* animation-play-state: paused; */
-}
-.loader.scene2 .loading {
-  /* animation-play-state: running; */
-  opacity: 1;
-  display: block;
-}
-
-.isloading .data {
-  opacity: 0;
-}
-.showdata .data {
-  opacity: 1;
-}
-
-.data {
-  transition: opacity 1000ms linear;
+.frightened .alice-falling {
+  animation: freak-out 1.5s steps(2) infinite;
+  background: url("http://stash.rachelnabors.com/codepen/alice/alice-frightened-s41f9b8ddd1.png")
+    0 0 no-repeat;
+  background-size: 100% auto;
 }
