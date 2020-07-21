@@ -19,6 +19,7 @@
 
 .tuna-falling .tuna-glow {
   opacity: 0;
+  transition: opacity 2s linear;
 }
 
 #tunnel {
@@ -113,6 +114,12 @@ body {
   text-indent: 0%;
 }
 
+.sleeping .tuna-glow,
+.waking .tuna-glow,
+.weird .tuna-glow,
+.jolted .tuna-glow {
+  opacity: 1;
+}
 @keyframes freak-out {
   0% {
     background-position: 0 0;
