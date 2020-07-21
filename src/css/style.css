@@ -49,7 +49,7 @@ body {
   padding-top: 75%;
   /* Hide the text */
   text-indent: 100%;
-  white-space: nowrap;
+  white-space: pre-wrap;
   overflow: hidden;
 }
 
@@ -87,6 +87,30 @@ body {
 
 .jolted .alice-falling {
   background-position: 0 40%;
+}
+
+.curious .falling_curious {
+  text-indent: 0%;
+}
+
+.bored .falling_bored {
+  text-indent: 0%;
+}
+
+.sleeping .falling_sleeping {
+  text-indent: 0%;
+}
+
+.waking .falling_waking {
+  text-indent: 0%;
+}
+
+.weird .falling_weird {
+  text-indent: 0%;
+}
+
+.jolted .falling_jolted {
+  text-indent: 0%;
 }
 
 @keyframes freak-out {
