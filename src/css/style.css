@@ -1,137 +1,76 @@
-.tuna-falling {
-  position: fixed;
-  bottom: 0;
-  right: 50%;
-  transform: translateX(300px);
-  width: 170px;
-  z-index: 1;
-}
-.tuna-falling img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  max-width: 100%;
-}
-
-.tuna-falling .black-tuna {
-  position: relative;
-}
-
-.tuna-falling .tuna-glow {
-  opacity: 0;
-  transition: opacity 2s linear;
-}
-
-#tunnel {
-  position: relative;
-  top: 0;
-  left: 0;
-  background: url(http://stash.rachelnabors.com/codepen/alice/bg-tunnel-border-left.svg?1)
-      0 0 repeat-y,
-    url(http://stash.rachelnabors.com/codepen/alice/bg-tunnel-border-right.svg?1)
-      100% 0 repeat-y,
-    url(http://stash.rachelnabors.com/codepen/alice/bg-tunnel-furniture-comp900.svg)
-      top center repeat-y,
-    url(http://stash.rachelnabors.com/codepen/alice/bg-tunnel-specks.png),
-    #6c373f;
-  background-size: 20px 150px, 20px 150px, 80% auto, auto auto;
-}
-
 .wrapper {
-  width: 800px;
-  margin: 0 auto;
-}
-body {
-  background: #000;
+  position: absolute;
+  top: 40vh;
+  left: 40vw;
 }
 
-.page {
-  /* Each page has a 3/4 ratio */
-  padding-top: 75%;
-  /* Hide the text */
-  text-indent: 100%;
-  white-space: pre-wrap;
-  overflow: hidden;
+/* width = 1576 px */
+/* height = 2552px */
+/* heightblock =196.3px */
+/* widthblock = 394px */
+.cat {
+  display: block;
+  height: 196.3px;
+  width: 394px;
+}
+.cat_walk {
+  display: block;
+  background: url(/src/images/tuna_sprite.png) 0 0 no-repeat;
+  height: 196.3px;
+}
+.cat_sit {
+  display: block;
+  background: url(/src/images/tuna_sprite.png) -394px 0 no-repeat;
+  height: 196.3px;
 }
 
-.alice-falling {
-  background-image: url("http://stash.rachelnabors.com/codepen/alice/alice-fall-saebaba4ad9.png");
-  background-size: 100% auto;
-  width: 350px;
-  padding-top: 545px;
-  top: -10%;
-  left: 50%;
-  position: fixed;
-  transform: translate(-50%);
-  z-index: 20;
-}
-
-.curious .alice-falling {
-  background-position: 0 20%;
-}
-
-.bored .alice-falling {
-  background-position: 0 80%;
-}
-
-.sleeping .alice-falling {
-  background-position: 0 60%;
-}
-
-.waking .alice-falling {
-  background-position: 0 100%;
-}
-
-.weird .alice-falling {
-  background-position: 0 0;
-}
-
-.jolted .alice-falling {
-  background-position: 0 40%;
-}
-
-.curious .falling_curious {
-  text-indent: 0%;
-}
-
-.bored .falling_bored {
-  text-indent: 0%;
-}
-
-.sleeping .falling_sleeping {
-  text-indent: 0%;
-}
-
-.waking .falling_waking {
-  text-indent: 0%;
-}
-
-.weird .falling_weird {
-  text-indent: 0%;
-}
-
-.jolted .falling_jolted {
-  text-indent: 0%;
-}
-
-.sleeping .tuna-glow,
-.waking .tuna-glow,
-.weird .tuna-glow,
-.jolted .tuna-glow {
-  opacity: 1;
-}
-@keyframes freak-out {
-  0% {
-    background-position: 0 0;
+@keyframes cat_walking {
+  from {
+    background: url(/src/images/tuna_sprite.png) 0 0 no-repeat;
   }
-  100% {
-    background-position: 0 200%;
+  to {
+    background: url(/src/images/tuna_sprite.png) 0 -2159.3px no-repeat;
+  }
+}
+@keyframes cat_sitting {
+  from {
+    background: url(/src/images/tuna_sprite.png) -394px 0 no-repeat;
+  }
+  to {
+    background: url(/src/images/tuna_sprite.png) -394px -981px no-repeat;
   }
 }
 
-.frightened .alice-falling {
-  animation: freak-out 1.5s steps(2) infinite;
-  background: url("http://stash.rachelnabors.com/codepen/alice/alice-frightened-s41f9b8ddd1.png")
-    0 0 no-repeat;
-  background-size: 100% auto;
+@keyframes cat_standingup {
+  from {
+    background: url(/src/images/tuna_sprite.png) -394px -981px no-repeat;
+  }
+  to {
+    background: url(/src/images/tuna_sprite.png) -394px 0 no-repeat;
+  }
+}
+@keyframes cat_torun {
+  from {
+    background: url(/src/images/tuna_sprite.png) -788px 0 no-repeat;
+  }
+  to {
+    background: url(/src/images/tuna_sprite.png) -788px -981px no-repeat;
+  }
+}
+
+.playing .cat_walk {
+  animation: cat_walking 1s steps(12) 2;
+}
+.playing .cat_sit {
+  animation: cat_sitting 1s steps(5);
+  animation-fill-mode: forwards;
+}
+
+.playing .scene1 {
+  animation: cat_walking 1s steps(12) 2, cat_sitting 1s 2s steps(5) forwards,
+    cat_standingup 1s 4s steps(5), cat_walking 1s 5s steps(12) 1;
+}
+
+.playing .scene2 {
+  animation: cat_walking 1s steps(11) 2 forwards;
 }
