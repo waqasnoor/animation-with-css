@@ -54,7 +54,23 @@
     background: url(/src/images/tuna_sprite.png) -788px 0 no-repeat;
   }
   to {
-    background: url(/src/images/tuna_sprite.png) -788px -981px no-repeat;
+    background: url(/src/images/tuna_sprite.png) -788px -2159.3px no-repeat;
+  }
+}
+@keyframes cat_slowingdown {
+  from {
+    background: url(/src/images/tuna_sprite.png) -788px -2159.3px no-repeat;
+  }
+  to {
+    background: url(/src/images/tuna_sprite.png) -788px 0 no-repeat;
+  }
+}
+@keyframes cat_running {
+  from {
+    background: url(/src/images/tuna_sprite.png) -1182px 0 no-repeat;
+  }
+  to {
+    background: url(/src/images/tuna_sprite.png) -1182px -2355.3px no-repeat;
   }
 }
 
@@ -73,5 +89,8 @@
 }
 
 .playing .scene2 {
-  animation: cat_walking 1s steps(11) 2 forwards;
+  animation: cat_walking 700ms steps(11) 4, cat_torun 1000ms 2800ms steps(11) 1,
+    cat_running 700ms 3800ms steps(12) 6 forwards;
+  /* cat_torun 1000ms 8000ms steps(11) 1 forwards; */
+  /* cat_walking 500ms 6000ms steps(11) 3 forwards; */
 }
