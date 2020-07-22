@@ -67,8 +67,9 @@
 }
 
 .playing .scene1 {
-  animation: cat_walking 1s steps(12) 2, cat_sitting 1s 2s steps(5) forwards,
-    cat_standingup 1s 4s steps(5), cat_walking 1s 5s steps(12) 1;
+  animation: cat_walking 1s steps(11) 2 forwards,
+    cat_sitting 1s 2s steps(5) forwards, cat_standingup 1s 4s steps(5),
+    cat_walking 1s 5s steps(11) 1 forwards;
 }
 
 .playing .scene2 {
